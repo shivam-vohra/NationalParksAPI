@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NationalParksAPI/static/css/main.a617e044.chunk.css",
-    "main.js": "/NationalParksAPI/static/js/main.5013b9a1.chunk.js",
-    "main.js.map": "/NationalParksAPI/static/js/main.5013b9a1.chunk.js.map",
+    "main.js": "/NationalParksAPI/static/js/main.395b979b.chunk.js",
+    "main.js.map": "/NationalParksAPI/static/js/main.395b979b.chunk.js.map",
     "runtime-main.js": "/NationalParksAPI/static/js/runtime-main.9b012285.js",
     "runtime-main.js.map": "/NationalParksAPI/static/js/runtime-main.9b012285.js.map",
     "static/css/2.eec98c0e.chunk.css": "/NationalParksAPI/static/css/2.eec98c0e.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.eec98c0e.chunk.css",
     "static/js/2.c19490ec.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.5013b9a1.chunk.js"
+    "static/js/main.395b979b.chunk.js"
   ]
 }
