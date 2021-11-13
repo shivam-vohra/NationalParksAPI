@@ -134,9 +134,10 @@ const Home = () => {
                 wordBreak: "break-all"
             }}>
             <TableHeaderColumn isKey dataField='states'>State</TableHeaderColumn>
+            <TableHeaderColumn dataField="activity" width="12em">Activity</TableHeaderColumn>
             <TableHeaderColumn dataField='fullName'>Park Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='parkCode' overflowY="scroll" width="5em">Code</TableHeaderColumn>
-            <TableHeaderColumn dataField='url' dataFormat={buttonFormat} width="10em">Learn More</TableHeaderColumn>
+            <TableHeaderColumn dataField='parkCode' overflowY="scroll" width="4.5em">Code</TableHeaderColumn>
+            <TableHeaderColumn dataField='url' dataFormat={buttonFormat} width="7em">Learn More</TableHeaderColumn>
             </BootstrapTable>);
             setTable(newSchedule);
         } else {
