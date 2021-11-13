@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+View the live site [here](https://shivam-vohra.github.io/NationalParksAPI/#/). This site is deployed using Github Pages.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Creating the Web Application
+To prephase, this project was a fairly interesting learning experience. While I have had previous experience in web development, it was primarily with pure HTML, CSS, and JavaScript with no frameworks used. After completition, I can say the React framework is very adaptable and much easier to learn than I had anticipated, allowing me to understand why it is one of the most popular development frameworks today.
 
-## Available Scripts
+## What the Application Does
+This application uses the National Parks API in order to provide specific information to the user. There are a few primary features of this application. The first is a fairly simplistic feature where the user can click to learn more about the National Parks Service in general. One of the main features is the ability of the user to select specific activities and receive information about parks that correspond to the specific activities. The information includes the state of the park, the associated activity, the name of the park, and a button that leads to specific information about the park. The final key feature is the ability of a user to access images related to any selected park, and then also gain more information about that specific webcam image. This sums up the functionality of the web application.
 
-In the project directory, you can run:
+## Challenges in Development
+There were many challenges I had in my development of this web application. The largest challenge for me was in understanding the images that were to be displayed. In my first few tests with the webcams endpoint of the National Parks API, much of the data was empty, and there were no images available to extract from the response that was produced. This put me in an unsure situation as I did not know if this was supposed to happen. To correct for this, I explored the National Parks Service website and examined each park that was returning no images. From this, it was revealed to me that the webcams were inactive and there were no images available because of this. I was able to then implement an error message that displayed if that aforementioned case occured of the camera being inactive. Much of my other difficulties revolved around the usage of React and understanding of states which I was able to implement on the changes of the data that was provided through the API responses.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Achievements and Future Improvements
+While this was the first application I made, I can say I am proud of how well I was able to grasp the usage of React and implement the API responses as well. I am proud of the data manipulation I performed and the various ways I used fundamental data structures to accomplish the tasks.
+With this, I can say there are a few things I would want to improve about the application. The largest improvement I would want to make is the style of my application. I believe the style is fairly static currently, so I would want to give a more "lively" feel to the web application. Additionally, I would want to continue working on the page that displays images to create cards. These cards would be clickable and contain views of the parks. Clicking on the card would then show a pop-up about where to learn more about the park as well as a slideshow of the images if there are multiple. This improvement would have the information of the images available in a much more impactful way.
