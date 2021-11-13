@@ -8,15 +8,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap-table/dist/react-bootstrap-table.min.css';
 import { useHistory } from "react-router";
 
-
+/**
+ * Returns the screen that contains a selection bar for the different activities that
+ * individuals can partake in at the various national parks. Submitting the activity
+ * request results in the user seeing a table with all the information.
+ * @returns 
+ */
 const Home = () => {
 
-    let history = useHistory();
+    let history = useHistory(); // Setting router history to change pages on back
 
+    // Use of state to maintain different information needed.
     const [activities, setActivities] = useState([])
     const [parks, setParks] = useState([]);
     const [table, setTable] = useState([]);
 
+    // Fetch from API all the activities that are available for the user.
     useEffect(() => {
         fetch("https://developer.nps.gov/api/v1/activities?api_key=YRuS1eUnETXxpwXCIQ3XkUqViRS2EOYVAHRB8rPj", {
             headers : {
@@ -27,6 +34,7 @@ const Home = () => {
     }, []);
 
 
+    // Adjust the activity data to contain values and labels such that 
     let transformed = [];
     let namesToIds = {};
     if (activities["data"] != undefined && activities["data"].length > 0) {
@@ -36,8 +44,15 @@ const Home = () => {
         });
     }
 
+    /**
+     * Adds on the newly selected activity to the selection list of all the activities
+     * selected so far. Essentially, a string is produced that contains each name id
+     * that allows querying to find all the possible parks.
+     * @param {JSON Object} selection 
+     */
     const addToSelected = (selection) => {
         let resultString = "";
+        // Adjust result string with all park name ids.
         selection.forEach(element => {
             console.log(element);
             resultString += namesToIds[element["label"]] + ",";
@@ -57,6 +72,13 @@ const Home = () => {
         }
     }
 
+    /**
+     * Gets all information for each specific park that the addToSelected function produces
+     * in the state of the current parks. THe information includes the activity that the
+     * park is associated with as well as the additional link to learn more.
+     * @param {List} parks 
+     * @returns Array containing all park information
+     */
     const gatherInfo = (parks) => {
         let allParks = [];
         let totalParks = parks["data"];
@@ -71,11 +93,21 @@ const Home = () => {
         return allParks;
     }
 
-
+    /**
+     * Handles the submission of the button that opens a new page of the supplied URL.
+     * @param {String} url Link to open new page 
+     */
     const handleSubmit = (url) => {
         window.open(`${url}`);
-      }
+    }
 
+    /**
+     * 
+     * @param {String} cell Main url that is passed
+     * @param {String} row Additional unused data
+     * @param {String} url Additional unused data
+     * @returns Button that, on click, opens new page.
+     */
     const buttonFormat = (cell, row, url) => {
         return <ReactiveButton 
                             buttonState="idle"
@@ -86,9 +118,15 @@ const Home = () => {
                             />
     }
 
+    /**
+     * Adjusts the current schedule with a table that contains all the parks and the
+     * associated park code, states, and button that links to the park specific page on
+     * the National Park Service domain.
+     */
     const getSchedule = () => {
         console.log(parks);
         if (parks.length > 0) {
+            // Only adjust current schedule if there are parks available.
             let newSchedule = [];
             newSchedule.push(<BootstrapTable data={parks} striped hover borderRadius="1em" tableStyle={{
                 backgroundColor: "white"

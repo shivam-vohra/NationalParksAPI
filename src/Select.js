@@ -1,16 +1,21 @@
 import React from "react"
 import bgimg from './img/nationalpark.jpg';
 import ReactiveButton from "reactive-button";
-import { Modal } from "./Modal";
-import { useState } from "react";
 import { useHistory } from "react-router";
 import { ButtonGroup } from "react-bootstrap";
 
+/**
+ * Select page component (functional) that displays three primary options: learning more
+ * about the national parks through a redirection button, moving to activity selection with
+ * a button, and moving to park image selection with a button.
+ * @returns Selection component
+ */
 const Select = () => {
 
-    let history = useHistory();
+    let history = useHistory(); // Keep track of page changes
 
-
+    // Show top title box and then three buttons to either learn more, go to activity
+    // selection, or go to find images of the specific parks.
     return (
         <div>
             <div style={{
